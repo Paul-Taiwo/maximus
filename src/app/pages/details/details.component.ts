@@ -15,7 +15,7 @@ export class DetailsComponent implements OnInit {
   darkMode: boolean;
   themeSub: Subscription;
   cityIllustrationPath: string;
-  daysForecast: Object;
+  daysForecast: any;
   errorMessage: string;
   temp: number;
   state: string;
@@ -86,7 +86,7 @@ export class DetailsComponent implements OnInit {
       Object.keys(dates).forEach((day) => {
         dates[day].temp = Math.round(dates[day].temp / dates[day].counter);
       });
-      
+
       delete dates[Object.keys(dates)[0]];
       this.daysForecast = dates;
     }, (err) => {
